@@ -31,3 +31,13 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Build artefacts
+build/
+*.o
+*.d
+*.a
+
+# Models and voices
+*.gguf
+*.s2voice
