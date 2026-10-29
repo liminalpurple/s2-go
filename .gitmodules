@@ -1,3 +1,4 @@
 [submodule "s2.cpp"]
 	path = s2.cpp
 	url = https://github.com/rodrigomatta/s2.cpp.git
+	ignore = dirty
