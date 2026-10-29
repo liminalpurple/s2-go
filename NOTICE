@@ -1,0 +1,13 @@
+s2-go
+Copyright (c) 2026 Morgan Foster
+
+The Go code in this repository is licensed under the MIT License (see LICENSE).
+
+This project builds on s2.cpp (https://github.com/rodrigomatta/s2.cpp), included
+as a git submodule, and Fish Audio S2 Pro. Both are licensed under the Fish Audio
+Research License (see LICENSE-FISH-AUDIO.md), which permits research and
+non-commercial use only. Any build that includes s2.cpp, including the container
+image, is subject to that license.
+
+This model is licensed under the Fish Audio Research License, Copyright © 39 AI,
+INC. All Rights Reserved.
