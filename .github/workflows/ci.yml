@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    # GitHub's runners have no GPU, so this builds for the CPU and runs the tests that don't need a
+    # model; the synthesis tests run locally with TEST_S2_MODEL set
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build libs2go.a
+        run: make libs2go.a
+
+      - name: Check formatting
+        run: test -z "$(gofmt -l *.go)" || { gofmt -l *.go; exit 1; }
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test
+        run: go test -v ./...
